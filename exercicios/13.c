@@ -1,26 +1,20 @@
 #include <stdio.h>
 
-int validar(){
-    int n;
+int lerNumero(){
+    int num;
     
-    printf("Digite um valor inteiro e positivo: ");
-    scanf("%d", &n);
-    
-    while(n <= 0){
-        printf("Erro! Digite um valor inteiro e positivo: ");
-        scanf("%d", &n);
-    }
-    
-    return n;
+    do{
+        printf("Digite um número positivo: ");
+        scanf("%d", &num);
+        
+        if(num <= 0){
+            printf("Numero invalido! Tente novamente.\n");
+        }
+    }while(num <= 0);
+    return num;
 }
 
-
 int main(){
-    
-    int valor = validar();
-    
-    printf("\nO número %d é positivo! ", valor);
-    
+    printf("Número: %d", lerNumero());
     return 0;
-
 }
